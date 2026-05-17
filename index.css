@@ -337,6 +337,19 @@ footer {
   margin-top: 40px;
 }
 
+.cursor-trail {
+  width: 14px;
+  height: 14px;
+  background: #38bdf8;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  box-shadow: 0 0 10px #38bdf8, 0 0 25px #38bdf8;
+}
+
 @media (max-width: 768px) {
 
   h1 {

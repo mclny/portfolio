@@ -170,25 +170,58 @@ h1 {
   line-height: 1.8;
 }
 
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin: 12px 0;
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  margin: 15px 0;
 }
 
-.project-images img {
+/* IMAGE TRACK */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* IMAGES */
+.carousel-track img {
   width: 100%;
-  height: 80px;
+  min-width: 100%;
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+/* BUTTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+
+  font-size: 20px;
+  padding: 10px;
+
+  cursor: pointer;
+  border-radius: 50%;
   transition: 0.3s;
 }
 
-.project-images img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+.carousel-btn:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 .about-intro {

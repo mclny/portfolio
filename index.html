@@ -183,20 +183,35 @@
 
   </div>
 
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>
-        A responsive personal portfolio website with animations, and particle background.
-      </p>
+  <div class="card">
 
-      <div class="project-tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-      </div>
+  <h3>Adobe Photoshop Designs</h3>
+
+  <div class="carousel">
+
+    <div class="carousel-track">
+
+      <img src="img/ads.png" alt="Photoshop 1">
+      <img src="img/Invitation.png" alt="Photoshop 2">
+
     </div>
 
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+
   </div>
+
+  <p>
+    A collection of creative designs edited using Adobe Photoshop, focusing on layout design, color grading, and visual composition.
+  </p>
+
+  <div class="project-tags">
+    <span>Adobe Photoshop</span>
+    <span>Graphic Design</span>
+    <span>Editing</span>
+  </div>
+
+</div>
 
 </section>
 
@@ -421,42 +436,40 @@
   typeEffect();
 </script>
 
-<script src="script.js"></script>
+<script>
+  const carousels = document.querySelectorAll(".carousel");
 
-  <script>
-  const track = document.querySelector(".carousel-track");
-  const images = document.querySelectorAll(".carousel-track img");
-  const nextBtn = document.querySelector(".next");
-  const prevBtn = document.querySelector(".prev");
+  carousels.forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+    const images = carousel.querySelectorAll("img");
+    const nextBtn = carousel.querySelector(".next");
+    const prevBtn = carousel.querySelector(".prev");
 
-  let index = 0;
+    let index = 0;
 
-  function updateSlide() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  nextBtn.addEventListener("click", () => {
-    index++;
-    if (index >= images.length) {
-      index = 0;
+    function updateSlide() {
+      track.style.transform = `translateX(-${index * 100}%)`;
     }
-    updateSlide();
-  });
 
-  prevBtn.addEventListener("click", () => {
-    index--;
-    if (index < 0) {
-      index = images.length - 1;
-    }
-    updateSlide();
-  });
+    nextBtn.addEventListener("click", () => {
+      index++;
+      if (index >= images.length) index = 0;
+      updateSlide();
+    });
 
-  // AUTO SLIDE (Airbnb style feel)
-  setInterval(() => {
-    index++;
-    if (index >= images.length) index = 0;
-    updateSlide();
-  }, 4000);
+    prevBtn.addEventListener("click", () => {
+      index--;
+      if (index < 0) index = images.length - 1;
+      updateSlide();
+    });
+
+    // auto slide
+    setInterval(() => {
+      index++;
+      if (index >= images.length) index = 0;
+      updateSlide();
+    }, 4000);
+  });
 </script>
 
 </body>

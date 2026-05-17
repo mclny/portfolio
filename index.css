@@ -328,3 +328,11 @@ h1 {
 .contact-item:hover i {
   color: black;
 }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #94a3b8;
+  margin-top: 40px;
+}

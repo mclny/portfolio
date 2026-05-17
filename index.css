@@ -141,3 +141,56 @@ h1 {
   color: black;
   box-shadow: 0 0 15px #38bdf8;
 }
+
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.about-intro {
+  font-size: 18px;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.highlight {
+  padding: 20px;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: 0.3s;
+}
+
+.highlight h3 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.highlight:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}

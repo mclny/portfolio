@@ -281,6 +281,57 @@
     });
   </script>
 
+  <script>
+
+    const trails = [];
+
+    for (let i = 0; i < 12; i++) {
+
+      const dot = document.createElement("div");
+      dot.className = "cursor-trail";
+
+      document.body.appendChild(dot);
+
+      trails.push({
+        element: dot,
+        x: 0,
+        y: 0
+      });
+    }
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateTrail() {
+
+      let x = mouseX;
+      let y = mouseY;
+
+      trails.forEach((trail, index) => {
+
+        trail.x += (x - trail.x) * 0.3;
+        trail.y += (y - trail.y) * 0.3;
+
+        trail.element.style.left = trail.x + "px";
+        trail.element.style.top = trail.y + "px";
+
+        trail.element.style.scale = (12 - index) / 12;
+
+        x = trail.x;
+        y = trail.y;
+      });
+
+      requestAnimationFrame(animateTrail);
+    }
+
+    animateTrail();
+
+  </script>
 
 <script src="script.js"></script>
 

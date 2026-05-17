@@ -156,14 +156,23 @@
 
     <h3>Lakbay Travel & Tours</h3>
 
-    <div class="project-images">
-      <img src="img/web1.jpg" alt="Lakbay Travel 1">
-      <img src="img/web2.jpg" alt="Lakbay Travel 2">
-      <img src="img/web3.jpg" alt="Lakbay Travel 3">
-    </div>
+   <div class="carousel">
+
+  <div class="carousel-track">
+
+    <img src="img/web1.jpg" alt="Lakbay 1">
+    <img src="img/web2.jpg" alt="Lakbay 2">
+    <img src="img/web3.jpg" alt="Lakbay 3">
+
+  </div>
+
+  <button class="carousel-btn prev">&#10094;</button>
+  <button class="carousel-btn next">&#10095;</button>
+
+</div>
 
     <p>
-      A travel and tours website concept designed to showcase destinations, tour packages, and booking experience. Built with responsive layout and modern UI design.
+      A travel and tours website concept designed to showcase destinations, tour packages, and booking experience. Built with responsive layout.
     </p>
 
     <div class="project-tags">
@@ -177,7 +186,7 @@
     <div class="card">
       <h3>Portfolio Website</h3>
       <p>
-        A responsive personal portfolio website with animations, particle background, and modern UI design.
+        A responsive personal portfolio website with animations, and particle background.
       </p>
 
       <div class="project-tags">
@@ -413,6 +422,42 @@
 </script>
 
 <script src="script.js"></script>
+
+  <script>
+  const track = document.querySelector(".carousel-track");
+  const images = document.querySelectorAll(".carousel-track img");
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
+
+  let index = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index++;
+    if (index >= images.length) {
+      index = 0;
+    }
+    updateSlide();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index--;
+    if (index < 0) {
+      index = images.length - 1;
+    }
+    updateSlide();
+  });
+
+  // AUTO SLIDE (Airbnb style feel)
+  setInterval(() => {
+    index++;
+    if (index >= images.length) index = 0;
+    updateSlide();
+  }, 4000);
+</script>
 
 </body>
 </html>

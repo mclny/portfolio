@@ -217,3 +217,27 @@ h1 {
 
   transition: all 0.3s ease;
 }
+
+.skill-item.html i {
+  color: #e34f26;
+}
+
+.skill-item.css i {
+  color: #1572b6;
+}
+
+.skill-item.js i {
+  color: #f7df1e;
+}
+
+.skill-item.php i {
+  color: #777bb4;
+}
+
+.skill-item.mysql i {
+  color: #00758f;
+}
+
+.skill-item.responsive i {
+  color: #38bdf8;
+}

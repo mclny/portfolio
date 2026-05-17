@@ -156,6 +156,51 @@ h1 {
 }
 
 .about-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-card {
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.about-intro {
+  font-size: 18px;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.highlight {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.highlight:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(56,189,248,0.3);
+}
+
+.highlight h3 {
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.about-container {
   max-width: 800px;
   margin: auto;
   text-align: center;
